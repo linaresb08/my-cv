@@ -4,8 +4,20 @@
   Docs: https://tailwindcss.com/docs/configuration
   Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
+const { colors } = require('tailwindcss/defaultTheme')
+
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        blue: {
+          ...colors.blue,
+          '200': '#C7EEFF',
+          '600': '#2085D5',
+        },
+      },
+    },
+  },
   variants: {},
   plugins: [],
   purge: {

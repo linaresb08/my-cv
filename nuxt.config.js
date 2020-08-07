@@ -1,49 +1,48 @@
 export default {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
-    titleTemplate: '%s | my-cv',
-    htmlAttrs: { lang: 'en' },
+    titleTemplate: '%s | Mi curriculum vitae',
+    htmlAttrs: { lang: 'es' },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Betzabeth Linares&apos; curriculum vitae' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Betzabeth Linares&apos; curriculum vitae',
+      },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   /*
-  ** Load nuxt modules
-  */
+   ** Load nuxt modules
+   */
   modules: [],
 
   /*
-  ** Load nuxt build-modules
-  */
-  buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss'
-  ],
+   ** Load nuxt build-modules
+   */
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
 
   /*
-  ** This option is given directly to the vue-router Router constructor
-  */
+   ** This option is given directly to the vue-router Router constructor
+   */
   router: {
     base: '',
-    linkActiveClass: 'is-active'
+    linkActiveClass: 'is-active',
   },
 
   /*
-  ** Customize the progress bar color
-  */
+   ** Customize the progress bar color
+   */
   loading: { color: '#3B8070' },
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
      ** PostCSS setup
@@ -55,21 +54,21 @@ export default {
         cssnano: {
           preset: 'default',
           discardComments: { removeAll: true },
-          zIndex: false
-        }
+          zIndex: false,
+        },
       },
       // Change the postcss-preset-env settings
       preset: {
         autoprefixer: {
           cascade: false,
-          grid: true
-        }
-      }
+          grid: false,
+        },
+      },
     },
 
     /*
-    ** Run ESLint on save
-    */
-    extend(config, ctx) { }
-  }
+     ** Run ESLint on save
+     */
+    extend(config, ctx) {},
+  },
 }
