@@ -4,14 +4,19 @@
   Docs: https://tailwindcss.com/docs/configuration
   Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
-const { colors } = require('tailwindcss/defaultTheme')
+// load default theme settings
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   theme: {
+    fontFamily: {
+      display: ['Roboto', 'Ubuntu', 'Arial', 'sans-serif'],
+      body: ['Roboto', 'sans-serif'],
+    },
     extend: {
       colors: {
         blue: {
-          ...colors.blue,
+          ...defaultTheme.blue,
           '200': '#C7EEFF',
           '600': '#2085D5',
         },

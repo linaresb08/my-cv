@@ -14,7 +14,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class: `font-sans mode-${this.themeName}`,
+        class: `mode-${this.themeName}`,
       },
     }
   },

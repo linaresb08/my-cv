@@ -38,7 +38,7 @@ export default {
   /*
    ** Customize the progress bar color
    */
-  loading: { color: '#3B8070' },
+  loading: { color: '#2085D5' },
 
   /*
    ** Build configuration
