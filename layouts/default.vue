@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar @themeModeValue="themeModeValue" />
     <nuxt />
   </div>
 </template>
@@ -13,30 +13,22 @@ export default {
   },
   data() {
     return {
-      themeName: 'light',
+      modeName: 'light',
     }
+  },
+  methods: {
+    themeModeValue(value) {
+      this.modeName = value
+    },
   },
   head() {
     return {
       bodyAttrs: {
-        class: `mode-${this.themeName}`,
+        class: `${this.modeName === 'light' ? 'mode-light' : 'mode-dark'}`,
       },
     }
   },
 }
 </script>
 
-<style>
-.mode-light {
-  @apply bg-gray-100;
-  @apply text-gray-900;
-}
-.mode-dark {
-  @apply bg-gray-900;
-  @apply text-gray-100;
-}
-.mode-light,
-.mode-dark {
-  transition: all 0.5s ease;
-}
-</style>
+<style lang="scss"></style>

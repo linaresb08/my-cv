@@ -4,4 +4,5 @@
  .mode-dark {
   @apply bg-gray-900;
   @apply text-gray-100;
+  transition: all 0.5s ease;
 }
