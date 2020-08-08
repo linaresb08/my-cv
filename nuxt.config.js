@@ -18,6 +18,11 @@ export default {
   },
 
   /*
+   ** Main CSS file
+   */
+  css: ['~assets/scss/tailwind.scss'],
+
+  /*
    ** Load nuxt modules
    */
   modules: [],
