@@ -1,0 +1,7 @@
+/*
+ ** Define the .mode-light styles o .mode-dark theme
+ */
+.mode-light {
+  @apply bg-gray-100;
+  @apply text-gray-900;
+}

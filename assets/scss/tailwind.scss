@@ -1,0 +1,52 @@
+@import 'tailwindcss/base';
+
+/*
+ ** Add custom base styles after @tailwind base and before @tailwind components to avoid specificity issues
+ */
+@import 'modeLight';
+@import 'modeDark';
+
+ /*
+ example:
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
+ */
+@import 'tailwindcss/components';
+/*
+ ** Add custom component classes before your utilities
+
+ example:
+  .btn {
+    @apply font-bold py-2 px-4 rounded;
+  }
+
+  .btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+  .btn-blue:hover {
+    @apply bg-blue-700;
+  }
+ */
+
+@import 'tailwindcss/utilities';
+/*
+ ** Add any custom utilities to the end of your CSS file
+
+ example:
+  .rotate-0 {
+    transform: rotate(0deg);
+  }
+  .rotate-90 {
+    transform: rotate(90deg);
+  }
+ */
