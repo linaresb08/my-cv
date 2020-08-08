@@ -5,7 +5,7 @@
   Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
 // load default theme settings
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   theme: {
@@ -13,15 +13,10 @@ module.exports = {
       display: ['Roboto', 'Ubuntu', 'Arial', 'sans-serif'],
       body: ['Roboto', 'sans-serif'],
     },
-    extend: {
-      colors: {
-        blue: {
-          ...defaultTheme.blue,
-          '200': '#C7EEFF',
-          '600': '#2085D5',
-        },
-      },
+    container: {
+      center: true,
     },
+    extend: {},
   },
   variants: {},
   plugins: [],
