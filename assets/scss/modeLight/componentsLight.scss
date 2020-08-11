@@ -1,0 +1,19 @@
+/*
+ ** Define the .mode-light components styles theme
+ */
+.mode-light {
+  // Navbar
+  .navbar .BL-logo:hover {
+    rect {
+      stroke: #2b6cb0;
+    }
+    path {
+      fill: #2b6cb0;
+    }
+  }
+
+  // Buttons
+  .btn-blue:hover {
+    @apply bg-blue-700;
+  }
+}

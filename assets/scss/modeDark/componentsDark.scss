@@ -1,0 +1,19 @@
+/*
+ ** Define the .mode-dark components styles theme
+ */
+.mode-dark {
+  .navbar .BL-logo:hover {
+    rect {
+      stroke: #bee3f8;
+    }
+    path {
+      fill: #bee3f8;
+    }
+  }
+
+  // Buttons
+  .btn-blue:hover {
+    @apply bg-blue-200;
+    @apply text-gray-800;
+  }
+}
