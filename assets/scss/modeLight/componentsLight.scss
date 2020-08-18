@@ -3,12 +3,15 @@
  */
 .mode-light {
   // Navbar
+  .navbar {
+    background-color: theme('colors.gray.200');
+  }
   .navbar .BL-logo:hover {
     rect {
-      stroke: #2b6cb0;
+      stroke: theme('colors.blue.700');
     }
     path {
-      fill: #2b6cb0;
+      fill: theme('colors.blue.700');
     }
   }
 

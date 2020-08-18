@@ -2,18 +2,20 @@
  ** Define the .mode-dark components styles theme
  */
 .mode-dark {
+  .navbar {
+    background-color: theme('colors.gray.800');
+  }
   .navbar .BL-logo:hover {
     rect {
-      stroke: #bee3f8;
+      stroke: theme('colors.blue.400');
     }
     path {
-      fill: #bee3f8;
+      fill: theme('colors.blue.400');
     }
   }
 
   // Buttons
   .btn-blue:hover {
-    @apply bg-blue-200;
-    @apply text-gray-800;
+    @apply bg-blue-400;
   }
 }
