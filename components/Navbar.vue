@@ -8,8 +8,8 @@
           height="42"
           fill="none"
           class="BL-logo"
-          @mouseover="beRounded"
           @mouseleave="beRectangle"
+          @mouseover="beRounded"
         >
           <rect
             id="BL-rectangle"
@@ -29,27 +29,27 @@
           />
         </svg>
       </div>
-      <ul class="nav-links">
-        <li class="nav-link">
+      <div class="nav-links">
+        <a href="#prueba" class="nav-link">
           Section 1
-        </li>
-        <li class="nav-link">
+        </a>
+        <a href="#prueba2" class="nav-link">
           Section 2
-        </li>
-        <li class="nav-link">
+        </a>
+        <a href="#prueba3" class="nav-link">
           Section 3
-        </li>
-        <li class="nav-link">
+        </a>
+        <a href="#prueba4" class="nav-link">
           Section 4
-        </li>
-        <li class="nav-link" @click="changeTheme">
+        </a>
+        <a class="nav-link" @click="changeTheme">
           icon
           <span class="md:hidden">
             Cambiar a modo
             {{ modeTheme == 'light' ? 'Oscuro' : 'Claro' }}
           </span>
-        </li>
-      </ul>
+        </a>
+      </div>
     </nav>
   </div>
 </template>
@@ -65,18 +65,18 @@ export default {
   },
 
   methods: {
+    beRectangle() {
+      document.getElementById('BL-rectangle').setAttribute('rx', '4.5')
+    },
+    beRounded() {
+      document.getElementById('BL-rectangle').setAttribute('rx', '50')
+    },
     changeTheme() {
       this.modeTheme =
         this.modeTheme === 'light'
           ? (this.modeTheme = 'dark')
           : (this.modeTheme = 'light')
       this.$emit('themeModeValue', this.modeTheme)
-    },
-    beRounded() {
-      document.getElementById('BL-rectangle').setAttribute('rx', '50')
-    },
-    beRectangle() {
-      document.getElementById('BL-rectangle').setAttribute('rx', '4.5')
     },
   },
 }
@@ -86,16 +86,39 @@ export default {
 .navbar {
   @apply bottom-0;
   @apply fixed;
-  @apply p-2;
+  @apply px-2;
   @apply w-full;
+  transition: background-color 0.5s ease;
 
   .nav {
     @apply flex;
     @apply items-center;
     @apply justify-between;
+  }
 
-    .nav-links {
-      @apply flex;
+  .nav-links {
+    @apply flex;
+
+    .nav-link {
+      align-items: center;
+      border-top: 2px solid transparent;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      height: 50px;
+      padding: 0.5rem 1rem;
+      transition: border-top 0.5s ease;
+    }
+    .nav-link.active {
+      @apply border-blue-500;
+      border-bottom-color: transparent !important;
+    }
+    .nav-link:hover {
+      @apply border-blue-500;
+      @apply border-opacity-75;
+      border-bottom-color: transparent !important;
     }
   }
 
