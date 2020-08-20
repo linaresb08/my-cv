@@ -3,16 +3,10 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s | Mi curriculum vitae',
-    htmlAttrs: { lang: 'es' },
+    titleTemplate: '%s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Betzabeth Linares&apos; curriculum vitae',
-      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -43,7 +37,7 @@ export default {
   /*
    ** Customize the progress bar color
    */
-  loading: { color: '#2085D5' },
+  loading: { color: '#4299E1' },
 
   /*
    ** Build configuration
