@@ -29,25 +29,31 @@
           />
         </svg>
       </div>
+      <div class="block lg:hidden">
+        <button
+          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+        >
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
       <div class="nav-links">
+        <a
+          v-for="link in navLinks[navLanguage]"
+          :key="link.to"
+          :href="`#${link.to}`"
+          class="nav-link"
+        >
+          {{ link.name }}
+        </a>
         <a href="#prueba" class="nav-link">
           Section 1
-        </a>
-        <a href="#prueba2" class="nav-link">
-          Section 2
-        </a>
-        <a href="#prueba3" class="nav-link">
-          Section 3
-        </a>
-        <a href="#prueba4" class="nav-link">
-          Section 4
-        </a>
-        <a class="nav-link" @click="changeTheme">
-          icon
-          <span class="md:hidden">
-            Cambiar a modo
-            {{ modeTheme == 'light' ? 'Oscuro' : 'Claro' }}
-          </span>
         </a>
       </div>
     </nav>
@@ -58,9 +64,33 @@
 export default {
   name: 'Navbar',
 
+  props: {
+    navLanguage: {
+      type: Number,
+      required: true,
+    },
+  },
+
   data() {
     return {
-      modeTheme: 'light',
+      navLinks: [
+        [
+          { name: 'Sobre mí', to: 'me' },
+          { name: 'Conocimientos', to: 'knowledge' },
+          { name: 'Habilidades', to: 'skills' },
+          { name: 'Educación', to: 'education' },
+          { name: 'Experiencia', to: 'experience' },
+          { name: 'Contacto', to: 'contact' },
+        ],
+        [
+          { name: 'About me', to: 'me' },
+          { name: 'Knowledge', to: 'knowledge' },
+          { name: 'Skills', to: 'skills' },
+          { name: 'Education', to: 'education' },
+          { name: 'Experience', to: 'experience' },
+          { name: 'Contact', to: 'contact' },
+        ],
+      ],
     }
   },
 
@@ -70,13 +100,6 @@ export default {
     },
     beRounded() {
       document.getElementById('BL-rectangle').setAttribute('rx', '50')
-    },
-    changeTheme() {
-      this.modeTheme =
-        this.modeTheme === 'light'
-          ? (this.modeTheme = 'dark')
-          : (this.modeTheme = 'light')
-      this.$emit('themeModeValue', this.modeTheme)
     },
   },
 }
@@ -88,7 +111,7 @@ export default {
   @apply fixed;
   @apply px-2;
   @apply w-full;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
 
   .nav {
     @apply flex;
@@ -110,6 +133,7 @@ export default {
       height: 50px;
       padding: 0.5rem 1rem;
       transition: border-top 0.5s ease;
+      white-space: nowrap;
     }
     .nav-link.active {
       @apply border-blue-500;
