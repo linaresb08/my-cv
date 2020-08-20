@@ -4,7 +4,8 @@
 .mode-light {
   // Navbar
   .navbar {
-    background-color: theme('colors.gray.200');
+    background-color: theme('colors.white');
+    box-shadow: 0 0 3px theme('colors.gray.300');
   }
   .navbar .BL-logo:hover {
     rect {
