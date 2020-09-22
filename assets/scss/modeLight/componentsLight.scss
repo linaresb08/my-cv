@@ -15,9 +15,14 @@
       fill: theme('colors.blue.700');
     }
   }
+  .nav-link:hover {
+    @apply border-opacity-75;
+    border-top-color: theme('colors.blue.700') !important;
+    color: theme('colors.blue.700') !important;
+  }
 
   // Buttons
-  .btn-blue:hover {
+  .btn-blue:focus {
     @apply bg-blue-700;
   }
 }

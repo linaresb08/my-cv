@@ -1,0 +1,15 @@
+/*
+ ** Define the initial custom styles
+ */
+button,
+select,
+option,
+optgroup,
+input,
+textarea {
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}

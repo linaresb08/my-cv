@@ -7,15 +7,20 @@
   }
   .navbar .BL-logo:hover {
     rect {
-      stroke: theme('colors.blue.400');
+      stroke: theme('colors.blue.300');
     }
     path {
-      fill: theme('colors.blue.400');
+      fill: theme('colors.blue.300');
     }
+  }
+  .nav-link:hover {
+    @apply border-opacity-75;
+    border-top-color: theme('colors.blue.300') !important;
+    color: theme('colors.blue.300') !important;
   }
 
   // Buttons
-  .btn-blue:hover {
+  .btn-blue:focus {
     @apply bg-blue-400;
   }
 }

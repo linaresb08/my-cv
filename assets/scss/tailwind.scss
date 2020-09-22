@@ -1,8 +1,9 @@
 @import 'tailwindcss/base';
 
 /*
- ** Add custom base styles after @tailwind base and before @tailwind components to avoid specificity issues
+ ** Add custom base styles after @tailwind base;
  */
+@import 'base/initial.scss';
 @import 'base/textStyles';
 @import 'modeLight/textLight.scss';
 @import 'modeDark/textDark.scss';
