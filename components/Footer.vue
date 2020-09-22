@@ -1,5 +1,6 @@
 <template>
   <section class="footer-page">
+    <button class="btn btn-blue">Soy button</button>
     <select
       v-model.number="selectedLanguage"
       name="select-language"

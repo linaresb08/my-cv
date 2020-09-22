@@ -31,15 +31,17 @@
       </div>
       <div class="block lg:hidden">
         <button
-          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+          class="flex items-center btn border text-blue-500 border-blue-500 hover:text-white hover:border-white"
         >
           <svg
-            class="fill-current h-3 w-3"
+            class="menu-hamburger fill-current"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
             <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            <path class="line-1" d="M0 3h20v2H0V3zm0" />
+            <path class="line-2" d="M0 9h20v2H0V9zm0" />
+            <path class="line-3" d="M0 15h20v2H0v-2z" />
           </svg>
         </button>
       </div>
@@ -52,7 +54,7 @@
         >
           {{ link.name }}
         </a>
-        <a href="#prueba" class="nav-link">
+        <a href="#prueba" class="nav-link active">
           Section 1
         </a>
       </div>
@@ -119,15 +121,20 @@ export default {
     @apply justify-between;
   }
 
+  .menu-hamburger {
+    height: 20px;
+    width: 20px;
+  }
+
   .nav-links {
     @apply flex;
 
     .nav-link {
       align-items: center;
+      border-bottom: 2px solid transparent;
       border-top: 2px solid transparent;
       border-top-left-radius: 2px;
       border-top-right-radius: 2px;
-      border-bottom: 2px solid transparent;
       cursor: pointer;
       display: flex;
       height: 50px;
@@ -136,13 +143,8 @@ export default {
       white-space: nowrap;
     }
     .nav-link.active {
-      @apply border-blue-500;
-      border-bottom-color: transparent !important;
-    }
-    .nav-link:hover {
-      @apply border-blue-500;
-      @apply border-opacity-75;
-      border-bottom-color: transparent !important;
+      border-top-color: theme('colors.blue.500');
+      color: theme('colors.blue.500');
     }
   }
 
