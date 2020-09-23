@@ -3,19 +3,20 @@
 /*
  ** Add custom base styles after @tailwind base;
  */
-@import 'base/initial.scss';
+@import 'base/initial';
 @import 'base/textStyles';
-@import 'modeLight/textLight.scss';
-@import 'modeDark/textDark.scss';
+@import 'modeLight/textLight';
+@import 'modeDark/textDark';
 
 @import 'tailwindcss/components';
 /*
  ** Add custom component classes before your utilities
  */
 @import 'base/componentsStyles';
-@import 'modeLight/componentsLight.scss';
-@import 'modeDark/componentsDark.scss';
+@import 'modeLight/componentsLight';
+@import 'modeDark/componentsDark';
 
 
 @import 'tailwindcss/utilities';
-@import 'customUtilities'
+@import 'customUtilities';
+@import 'animations';
