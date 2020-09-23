@@ -1,6 +1,10 @@
 /*
  ** Define the initial custom styles
  */
+html {
+  scroll-behavior: smooth;
+}
+
 button,
 select,
 option,
