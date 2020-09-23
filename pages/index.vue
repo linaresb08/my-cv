@@ -166,12 +166,12 @@ export default {
       pageHeaders: [
         {
           lang: 'es', // Idioma
-          title: `Desarrolladora | Mi curriculum vitae`, // Título
+          title: `Desarrolladora Front-End | Mi curriculum vitae`, // Título
           content: `Bienvenidos al curriculum vitae de Betzabeth Linares`, // Descripción
         },
         {
           lang: 'en', // Language
-          title: `Developer | My curriculum vitae`, // Title
+          title: `Front-End Developer | My curriculum vitae`, // Title
           content: `Welcome to Betzabeth Linares' curriculum vitae`, // Description
         },
       ],
