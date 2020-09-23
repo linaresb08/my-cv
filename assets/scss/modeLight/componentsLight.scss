@@ -6,6 +6,17 @@
   .navbar {
     background-color: theme('colors.white');
     box-shadow: 0 0 3px theme('colors.gray.300');
+
+    .nav {
+      @media screen and (max-width: 1023px) {
+        background-color: theme('colors.white');
+      }
+    }
+    .nav-links {
+      @media screen and (max-width: 1023px) {
+        background-color: theme('colors.gray.200');
+      }
+    }
   }
   .navbar .BL-logo:hover {
     rect {

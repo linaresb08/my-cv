@@ -29,22 +29,22 @@
           />
         </svg>
       </div>
-      <div class="block lg:hidden">
-        <button
-          class="flex items-center btn border text-blue-500 border-blue-500 hover:text-white hover:border-white"
+      <button
+        :class="['btn btn-menu', { 'open-menu': showMobileMenu }]"
+        @click="showMobileMenu = !showMobileMenu"
+      >
+        <svg
+          class="fill-current"
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            class="menu-hamburger fill-current"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path class="line-1" d="M0 3h20v2H0V3zm0" />
-            <path class="line-2" d="M0 9h20v2H0V9zm0" />
-            <path class="line-3" d="M0 15h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
+          <path class="line-1" d="M0 3h20v2H0V3zm0" />
+          <path class="line-2" d="M0 9h20v2H0V9zm0" />
+          <path class="line-3" d="M0 15h20v2H0v-2z" />
+        </svg>
+      </button>
       <div class="nav-links">
         <a
           v-for="link in navLinks[navLanguage]"
@@ -93,6 +93,7 @@ export default {
           { name: 'Contact', to: 'contact' },
         ],
       ],
+      showMobileMenu: false,
     }
   },
 
@@ -114,20 +115,66 @@ export default {
   @apply px-2;
   @apply w-full;
   transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  z-index: 1;
 
   .nav {
     @apply flex;
     @apply items-center;
     @apply justify-between;
-  }
 
-  .menu-hamburger {
-    height: 20px;
-    width: 20px;
+    @media screen and (max-width: 1023px) {
+      height: 50px;
+      position: relative;
+    }
   }
+  .btn-menu {
+    align-items: center;
+    border-color: theme('colors.blue.500');
+    border-width: 1px;
+    color: theme('colors.blue.500');
+    display: flex;
 
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+  .btn-menu.open-menu svg {
+    [class*='line'] {
+      transition: all 0.5s ease;
+    }
+
+    .line-1 {
+      transform-origin: left;
+      transform: translate(-2px, -2px) rotate(40deg);
+    }
+    .line-2 {
+      opacity: 0;
+    }
+    .line-3 {
+      transform-origin: left;
+      transform: translate(-2px, 2px) rotate(-40deg);
+    }
+  }
+  .btn-menu.open-menu + .nav-links {
+    @media screen and (max-width: 1023px) {
+      transform: translateY(0);
+    }
+  }
   .nav-links {
-    @apply flex;
+    display: flex;
+    @media screen and (max-width: 1023px) {
+      border-radius: 5px 5px 0 0;
+      bottom: 50px;
+      flex-direction: column-reverse;
+      position: absolute;
+      right: 0;
+      transform: translateY(350px);
+      transition: transform 0.5s ease;
+      z-index: -1;
+    }
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
 
     .nav-link {
       align-items: center;

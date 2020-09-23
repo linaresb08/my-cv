@@ -4,6 +4,17 @@
 .mode-dark {
   .navbar {
     background-color: theme('colors.gray.800');
+
+    .nav {
+      @media screen and (max-width: 1023px) {
+        background-color: theme('colors.gray.800');
+      }
+    }
+    .nav-links {
+      @media screen and (max-width: 1023px) {
+        background-color: theme('colors.gray.700');
+      }
+    }
   }
   .navbar .BL-logo:hover {
     rect {
@@ -22,5 +33,9 @@
   // Buttons
   .btn-blue:focus {
     @apply bg-blue-400;
+  }
+  .btn-menu:focus {
+    border-color: theme('colors.blue.300');
+    color: theme('colors.blue.300');
   }
 }
