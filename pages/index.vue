@@ -1,6 +1,13 @@
 <template>
   <div>
     <Navbar :nav-language="language" />
+    <MainCover :index-language="language" />
+    <AboutMe :index-language="language" />
+    <Knowledge :index-language="language" />
+    <Skills :index-language="language" />
+    <Education :index-language="language" />
+    <Experience :index-language="language" />
+    <Contact :index-language="language" />
     <section class="container">
       <div id="prueba" class="grid grid-cols-3 gap-8">
         <div class="col-span-1 bg-white px-4 pb-12 rounded">
@@ -86,7 +93,7 @@
           quisquam!
         </p>
       </div>
-      <div id="prueba4">
+      <div id="prueba">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo accusamus
           id, officiis deserunt aut iure iusto veritatis, atque laboriosam
@@ -130,13 +137,27 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import AboutMe from '@/components/AboutMe'
+import Contact from '@/components/Contact'
+import Education from '@/components/Education'
+import Experience from '@/components/Experience'
 import Footer from '@/components/Footer'
+import Knowledge from '@/components/Knowledge'
+import MainCover from '@/components/MainCover'
+import Navbar from '@/components/Navbar'
+import Skills from '@/components/Skills'
 export default {
   name: 'Index',
   components: {
-    Navbar,
+    AboutMe,
+    Contact,
+    Education,
+    Experience,
     Footer,
+    Knowledge,
+    MainCover,
+    Navbar,
+    Skills,
   },
   data() {
     return {
@@ -154,7 +175,6 @@ export default {
           content: `Welcome to Betzabeth Linares' curriculum vitae`, // Description
         },
       ],
-      allInfo: ['inf', 'lol'],
     }
   },
   methods: {
