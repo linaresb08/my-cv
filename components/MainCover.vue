@@ -1,6 +1,12 @@
 <template>
   <section class="main presentation-card">
-    Soy main
+    <div class="card">
+      <header class="title">Betzabeth Linares</header>
+      <p class="subtitle">{{ subtitleContent[indexLanguage] }}</p>
+      <div>
+        Info contacto
+      </div>
+    </div>
   </section>
 </template>
 
@@ -16,7 +22,9 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      subtitleContent: ['Desarrolladora Front-End', 'Front-End Developer'],
+    }
   },
 
   methods: {},
@@ -29,5 +37,23 @@ export default {
   display: flex;
   height: calc(100vh - 50px);
   justify-content: center;
+
+  .card {
+    .title {
+      @apply text-3xl;
+
+      @media screen and (min-width: 576px) {
+        @apply text-5xl;
+      }
+    }
+    .subtitle {
+      text-align: center;
+      text-transform: uppercase;
+
+      @media screen and (min-width: 576px) {
+        @apply text-xl;
+      }
+    }
+  }
 }
 </style>
