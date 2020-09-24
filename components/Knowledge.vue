@@ -1,6 +1,13 @@
 <template>
   <section id="knowledge">
-    Soy Knowledge
+    <div class="container p-5">
+      <header>{{ content[indexLanguage].title }}</header>
+      <ul>
+        <li v-for="item in content[indexLanguage].description" :key="item">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -16,7 +23,28 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      content: [
+        {
+          title: 'Conocimientos',
+          description: [
+            'Desarrollo Web',
+            'Resposive Web Design (RWD)',
+            'Scrum',
+            'Git',
+          ],
+        },
+        {
+          title: 'Knowledge',
+          description: [
+            'Web Development',
+            'Resposive Web Design (RWD)',
+            'Scrum',
+            'Git',
+          ],
+        },
+      ],
+    }
   },
 
   methods: {},

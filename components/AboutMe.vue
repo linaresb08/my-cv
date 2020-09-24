@@ -1,6 +1,10 @@
 <template>
   <section id="me">
-    Soy about me
+    <div class="container p-5">
+      <img src="" alt="Betzabeth Linares" />
+      <header>{{ content[indexLanguage].title }}</header>
+      <p>{{ content[indexLanguage].description }}</p>
+    </div>
   </section>
 </template>
 
@@ -16,7 +20,22 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      content: [
+        {
+          title: 'Sobre mí',
+          description: `¡Hola! Soy Betzabeth Linares, una Ingeniero de Computación
+            enfocada en el desarrollo web (Front-End); amante del diseño, las buenas
+            prácticas, entusiasta del aprendizaje de nuevas tecnologías y los retos.`,
+        },
+        {
+          title: 'About me',
+          description: `¡Hi! I'm Betzabeth Linares, a Computer Engineer...
+            enfocada en el desarrollo web (Front-End); amante del diseño, las buenas
+            prácticas, entusiasta del aprendizaje de nuevas tecnologías y los retos.`,
+        },
+      ],
+    }
   },
 
   methods: {},
