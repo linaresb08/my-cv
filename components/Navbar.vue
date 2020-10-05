@@ -63,6 +63,7 @@
 </template>
 
 <script>
+import { navbarLinks } from '~/plugins/utils/pageLanguage.js'
 export default {
   name: 'Navbar',
 
@@ -75,24 +76,7 @@ export default {
 
   data() {
     return {
-      navLinks: [
-        [
-          { name: 'Sobre mí', to: 'me' },
-          { name: 'Conocimientos', to: 'knowledge' },
-          { name: 'Habilidades', to: 'skills' },
-          { name: 'Educación', to: 'education' },
-          { name: 'Experiencia', to: 'experience' },
-          { name: 'Contacto', to: 'contact' },
-        ],
-        [
-          { name: 'About me', to: 'me' },
-          { name: 'Knowledge', to: 'knowledge' },
-          { name: 'Skills', to: 'skills' },
-          { name: 'Education', to: 'education' },
-          { name: 'Experience', to: 'experience' },
-          { name: 'Contact', to: 'contact' },
-        ],
-      ],
+      navLinks: navbarLinks(),
       showMobileMenu: false,
     }
   },

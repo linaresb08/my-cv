@@ -146,6 +146,7 @@ import Knowledge from '@/components/Knowledge'
 import MainCover from '@/components/MainCover'
 import Navbar from '@/components/Navbar'
 import Skills from '@/components/Skills'
+import { pageHeaders } from '~/plugins/utils/pageLanguage.js'
 export default {
   name: 'Index',
   components: {
@@ -163,18 +164,7 @@ export default {
     return {
       modeName: true,
       language: 0,
-      pageHeaders: [
-        {
-          lang: 'es', // Idioma
-          title: `Desarrolladora Front-End | Mi curriculum vitae`, // Título
-          content: `Bienvenidos al curriculum vitae de Betzabeth Linares`, // Descripción
-        },
-        {
-          lang: 'en', // Language
-          title: `Front-End Developer | My curriculum vitae`, // Title
-          content: `Welcome to Betzabeth Linares' curriculum vitae`, // Description
-        },
-      ],
+      pageHeaders: pageHeaders(),
     }
   },
   methods: {
